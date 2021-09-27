@@ -1,13 +1,13 @@
-// import { useDispatch } from 'react-redux';
-// import { filterTickers } from '../../redux/tickers/tickers-actions';
+import { useDispatch } from 'react-redux';
+import { filterHeroes } from '../../redux/heroes/heroes-actions';
 import styles from './SearchBar.module.scss';
 
 export default function SearchBar() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const onFilterChange = e => {
-  //   dispatch(filterTickers(e.target.value));
-  // };
+  const onFilterChange = e => {
+    dispatch(filterHeroes(e.target.value));
+  };
 
   return (
     <header className={styles.Searchbar}>
@@ -22,7 +22,7 @@ export default function SearchBar() {
           type="text"
           autoComplete="off"
           placeholder="Search heroes"
-          // onChange={onFilterChange}
+          onChange={onFilterChange}
         />
       </form>
     </header>

@@ -1,0 +1,57 @@
+.heroesList {
+  display: flex;
+  padding: 30px 50px;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heroCard {
+  width: 200px;
+  height: 290px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 250ms linear;
+  cursor: pointer;
+  outline: 1px solid rgb(75, 75, 75);
+  &:hover,
+  :focus {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px -5px #94a6af;
+    border-radius: 0, 0, 5px, 5px;
+  }
+}
+
+.imgBox {
+  margin: 0 auto;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+}
+
+.HeroName {
+  display: flex;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 10px 0 10px 10px;
+}
+
+.deleteBtn {
+  margin-left: auto;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  background-color: #bebebe;
+  transition: all 250ms linear;
+  background-image: url(../../img/delete-icon2.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  &:hover {
+    background-color: #d37676;
+    transform: scale(1.3);
+  }
+}

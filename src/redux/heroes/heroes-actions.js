@@ -5,7 +5,7 @@ const getAllHeroesSuccess = createAction('heroes/getAllHeroesSuccess');
 const getAllHeroesError = createAction('heroes/getAllHeroesError');
 
 const addHeroRequest = createAction('heroes/addHeroRequest');
-const addHeroesuccess = createAction('heroes/addHeroSuccess');
+const addHeroSuccess = createAction('heroes/addHeroSuccess');
 const addHeroError = createAction('heroes/addHeroError');
 
 const deleteHeroRequest = createAction('heroes/deleteHeroRequest');
@@ -19,7 +19,7 @@ export {
   getAllHeroesSuccess,
   getAllHeroesError,
   addHeroRequest,
-  addHeroesuccess,
+  addHeroSuccess,
   addHeroError,
   deleteHeroRequest,
   deleteHeroSuccess,

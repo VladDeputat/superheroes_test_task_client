@@ -1,20 +1,17 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import SearchBar from '../components/searchBar/SearchBar';
-import { getAllHeroes } from '../redux/heroes/heroes-operations';
+import React, { useState } from 'react';
+import CreateHeroBtn from '../components/CreateHeroBtn/CreateHeroBtn';
+import HeroesList from '../components/HeroesList/HeroesList';
+import CreateHeroModal from '../components/modals/CreateHeroModal/CreateHeroModal';
+import SearchBar from '../components/SearchBar/SearchBar';
 
 const MainPage = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllHeroes());
-  }, [dispatch]);
-
+  const [isModalOpen, setisModalOpen] = useState(false);
   return (
     <>
       <SearchBar />
-      <div>
-        <h1>Main Page</h1>
-      </div>
+      <CreateHeroBtn setisModalOpen={setisModalOpen} />
+      {isModalOpen && <CreateHeroModal setisModalOpen={setisModalOpen} />}
+      <HeroesList />
     </>
   );
 };

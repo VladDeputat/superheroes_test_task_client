@@ -4,13 +4,12 @@ import {
   getAllHeroesRequest,
   getAllHeroesSuccess,
   getAllHeroesError,
-  // addHeroRequest,
-  // addHeroesuccess,
-  // addHeroError,
-  // deleteHeroRequest,
-  // deleteHeroSuccess,
-  // deleteHeroError,
-  // filterHeroes,
+  addHeroRequest,
+  addHeroSuccess,
+  addHeroError,
+  deleteHeroRequest,
+  deleteHeroSuccess,
+  deleteHeroError,
 } from './heroes-actions';
 
 axios.defaults.baseURL = 'http://localhost:4000';
@@ -23,5 +22,21 @@ const getAllHeroes = () => dispatch => {
     .catch(error => dispatch(getAllHeroesError(error.message)));
 };
 
-// export { getAllHeroes, getHero, addHero, updateHero, deleteHero };
-export { getAllHeroes };
+const addHero = data => dispatch => {
+  dispatch(addHeroRequest());
+  axios
+    .post('/', data)
+    .then(res => dispatch(addHeroSuccess(res.data)))
+    .catch(error => dispatch(addHeroError(error.message)));
+};
+
+const deleteHero = id => dispatch => {
+  dispatch(deleteHeroRequest());
+  axios
+    .delete(`/${id}`)
+    .then(() => dispatch(deleteHeroSuccess(id)))
+    .catch(error => dispatch(deleteHeroError(error.message)));
+};
+
+// export { getAllHeroes, addHero, updateHero, deleteHero };
+export { getAllHeroes, addHero, deleteHero };

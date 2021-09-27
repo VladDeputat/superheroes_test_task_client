@@ -1,9 +1,10 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import heroesReducer from './heroes/heroes-reducers';
+import { heroesReducer, filterReducer } from './heroes/heroes-reducers';
 
 const store = configureStore({
   reducer: combineReducers({
     heroes: heroesReducer,
+    filter: filterReducer,
   }),
 });
 
